@@ -1,60 +1,53 @@
 body {
-    margin:0;
-    padding:0;
-    display:flex;
-    flex-direction:column;
+    background-color: aquamarine;
 }
 
 .container {
     display:flex;
+    align-items: center;
     justify-content: center;
-    align-items:center;
-    margin: 100px;
 }
 
 #calculatorBody {
-    border: solid black 1px;
-    width:300px;
-    height: 400px;
-    background-color: gray;
-    border-radius: 15px;;
-    display: flex;
-    justify-content: center;
-    flex-wrap:wrap;
-}
-
-#calculatorScreen {
-    border: solid black 1 px;
-    width: 250px;
-    height: 50px;
-    background-color: black;
+    height:600px;
+    width:400px;
+    border: black 1px solid;
     display:flex;
-    align-self: flex-start;
-    padding:0;
     align-items: center;
     justify-content: center;
+    flex-direction:column;
+    margin-top: 100px;
+    gap:5px;
+    border-radius: 5px;
+    background-color: gray;
+}
+
+#Row1 button {
+    height:60px;
+    width:160px;
+}
+
+button {
+    height:80px;
+    width:80px;
+    background-color: white;
     border-radius: 10px;
-    padding:2px;
-    margin-top:20px;
 }
 
-#calculatorContent {
-    color: white;
+#CLEAR, #DELETE, #EQUALS, #DIVIDE, #PLUS, #MINUS, #DOT, #TIMES {
+    background-color: aquamarine
+}
+
+
+#calculatorScreen {
     display:flex;
+    height:100px;
+    width:350px;
+    border: 1px solid black;
+    background-color: white;
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius:10px;
 
-}
-
-#calculatorButtons button {
-     width:60px;
-     height:50px;
-     border-radius: 10px;
-     background-color: orange;
-}
-
-#calculatorButtons {
-    display:inline-block;
-    flex-wrap:wrap;
-    margin: 20px;
-    margin-top: 10px;
-    
 }
