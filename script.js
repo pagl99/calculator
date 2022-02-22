@@ -105,9 +105,9 @@ plusButton.addEventListener('click', function(){
     if (operator!== ''){
         number2 = parseInt(screenContent.innerHTML)
         result = operate(number1, number2, operator);
-        screenContent.innerHTML = number1
         screenContent.innerHTML = ''
         screenContent.append(result);
+        result = number1
         operator = ''
     }
     else {number1 = parseInt(screenContent.innerHTML)
