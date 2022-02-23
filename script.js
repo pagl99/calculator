@@ -40,6 +40,7 @@ let button6 = document.querySelector('#button6');
 let button7 = document.querySelector('#button7');
 let button8 = document.querySelector('#button8');
 let button9 = document.querySelector('#button9');
+let buttondot = document.querySelector('#DOT');
 let clearButton = document.querySelector('#CLEAR');
 let deleteButton = document.querySelector('#DELETE');
 let plusButton = document.querySelector('#PLUS');
@@ -101,37 +102,46 @@ button0.addEventListener('click', function(){
     screenContent.append(value)
 })
 
+buttondot.addEventListener('click', function(){
+    let value = '.'
+    if (screenContent.innerHTML.includes(value)) {
+        return
+    }
+    else {screenContent.append(value)}
+    
+})
+
 plusButton.addEventListener('click', function(){
     if (operator!== ''){
-        number2 = parseInt(screenContent.innerHTML)
+        number2 = Number(screenContent.innerHTML)
         result = operate(number1, number2, operator);
         screenContent.innerHTML = ''
         screenContent.append(result);
         result = number1
         operator = ''
     }
-    else {number1 = parseInt(screenContent.innerHTML)
+    else {number1 = Number(screenContent.innerHTML)
     operator = '+'
     screenContent.innerHTML = ''}
 })
 
 minusButton.addEventListener('click', function(){
     if (operator!== ''){
-        number2 = parseInt(screenContent.innerHTML)
+        number2 = Number(screenContent.innerHTML)
         result = operate(number1, number2, operator);
         screenContent.innerHTML = number1
         screenContent.innerHTML = ''
         screenContent.append(result);
         operator = ''
     }
-    else { number1 = parseInt(screenContent.innerHTML)
+    else { number1 = Number(screenContent.innerHTML)
     operator = '-'
     screenContent.innerHTML = '' }
 })
 
 timesButton.addEventListener('click', function(){
 if (operator!== ''){
-    number2 = parseInt(screenContent.innerHTML)
+    number2 = Number(screenContent.innerHTML)
     result = operate(number1, number2, operator);
     screenContent.innerHTML = number1
     screenContent.innerHTML = ''
@@ -139,7 +149,7 @@ if (operator!== ''){
     operator = ''
     }
     else {
-    number1 = parseInt(screenContent.innerHTML)
+    number1 = Number(screenContent.innerHTML)
     operator = '*'
     screenContent.innerHTML = ''
     }
@@ -147,20 +157,20 @@ if (operator!== ''){
 
 divideButton.addEventListener('click', function(){
     if (operator!== ''){
-        number2 = parseInt(screenContent.innerHTML)
+        number2 = Number(screenContent.innerHTML)
         result = operate(number1, number2, operator);
         screenContent.innerHTML = number1
         screenContent.innerHTML = ''
         screenContent.append(result);
         operator = ''
         }
-        else {   number1 = parseInt(screenContent.innerHTML)
+        else {   number1 = Number(screenContent.innerHTML)
     operator = '/'
     screenContent.innerHTML = ''}
 })
 
 equalsButton.addEventListener('click', function(){
-    number2 = parseInt(screenContent.innerHTML);
+    number2 = Number(screenContent.innerHTML);
     result = operate(number1, number2, operator)
     console.log(result)
     screenContent.innerHTML = ''
