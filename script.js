@@ -28,6 +28,12 @@ function operate (number1, number2, operator) {
     return result}
 }
 
+function operand (x) {
+    number1 = Number(screenContent.innerHTML)
+    operator = x
+    screenContent.innerHTML = ''
+}
+
 
 //Functionality related to the buttons of the calculator
 let button0 = document.querySelector('#button0');
@@ -120,9 +126,7 @@ plusButton.addEventListener('click', function(){
         result = number1
         operator = ''
     }
-    else {number1 = Number(screenContent.innerHTML)
-    operator = '+'
-    screenContent.innerHTML = ''}
+    else {operand('+')}
 })
 
 minusButton.addEventListener('click', function(){
@@ -134,9 +138,7 @@ minusButton.addEventListener('click', function(){
         screenContent.append(result);
         operator = ''
     }
-    else { number1 = Number(screenContent.innerHTML)
-    operator = '-'
-    screenContent.innerHTML = '' }
+    else {operand('-')}
 })
 
 timesButton.addEventListener('click', function(){
@@ -148,11 +150,7 @@ if (operator!== ''){
     screenContent.append(result);
     operator = ''
     }
-    else {
-    number1 = Number(screenContent.innerHTML)
-    operator = '*'
-    screenContent.innerHTML = ''
-    }
+    else {operand('*')}
 })
 
 divideButton.addEventListener('click', function(){
@@ -164,9 +162,7 @@ divideButton.addEventListener('click', function(){
         screenContent.append(result);
         operator = ''
         }
-        else {   number1 = Number(screenContent.innerHTML)
-    operator = '/'
-    screenContent.innerHTML = ''}
+        else {operand ('/')}
 })
 
 equalsButton.addEventListener('click', function(){
